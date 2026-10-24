@@ -38,6 +38,9 @@ address uses that row's own image base and offset. The recorded `inline` flag
 does not supply a missing offset or authorize borrowing another row's address.
 When `faultingThread` is missing or does not resolve to a recorded thread
 object, row-zero roles are `unknown`; the recorded lookup remains available.
+A translated process records Rosetta's registers in a nested
+`threadState.rosetta` object; each one is reported as `rosetta.<name>` and
+counts toward the register budget.
 Observed JSON strings retain `""`; `null` means the field was missing or JSON
 `null`. This includes image paths, frame symbols, process text, and the older
 string `osVersion` form. Unlisted JSON keys and generic register names also
